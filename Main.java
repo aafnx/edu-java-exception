@@ -19,16 +19,13 @@ public class Main {
 //        System.out.println(task1.get());
 
         // задание 2
-        // добавил еще один блок catch, который перехватывет ошибку
-        // выхода за пределы массива
+        // добавил еще перехват ошибки выхода за пределы массива
         int[] intArray = new int[4];
         try {
             int d = 0;
             double catchedRes1 = intArray[8] / d;
             System.out.println("catchedRes1 = " + catchedRes1);
-        } catch (ArithmeticException e) {
-            System.out.println("Catching exception: " + e.getClass().getSimpleName());
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (ArithmeticException | ArrayIndexOutOfBoundsException e) {
             System.out.println("Catching exception: " + e.getClass().getSimpleName());
         }
 
